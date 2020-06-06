@@ -1,6 +1,6 @@
 import { CREA_POLIZZA } from '../actions/types';
 
-export default (state = null, action) => {
+export default (state = [], action) => {
   switch (action.type) {
     case CREA_POLIZZA:
       return { ...state, [action.payload._id]: action.payload };

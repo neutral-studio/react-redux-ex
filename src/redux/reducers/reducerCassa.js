@@ -1,6 +1,6 @@
 import { CREA_POLIZZA, RIMBORSA } from '../actions/types';
 
-export default (state = 2354, action) => {
+export default (state = 1234, action) => {
   switch (action.type) {
     case CREA_POLIZZA:
       return state + action.payload.ammontareVersato * 1;

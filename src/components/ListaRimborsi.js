@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import _ from 'lodash';
+import faker from 'faker';
 
 import { rimborsa } from '../redux/actions';
 
@@ -8,7 +9,7 @@ class ListaRimborsi extends React.Component {
   renderTable = () => {
     return _.values(this.props.rimborsi).map(rimborso => {
       return (
-        <tr>
+        <tr key={faker.random.uuid()}>
           <td>{rimborso.nome}</td>
           <td>-€{rimborso.ammontareDaRimborsare}</td>
         </tr>
