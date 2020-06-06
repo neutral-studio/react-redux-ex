@@ -1,18 +1,14 @@
-import { dispatch } from 'redux';
-import Faker from 'faker';
+import faker from 'faker';
 
 import { RIMBORSA } from './types';
 
-const faker = Faker();
-
 export default () => {
-  const action = {
+  return {
     type: RIMBORSA,
     payload: {
-      nome: faker.name(),
-      ammontareDaRimborsare: faker.price(),
+      nome: faker.name.findName(),
+      ammontareDaRimborsare: faker.commerce.price(),
+      _id: faker.random.uuid(),
     },
   };
-
-  dispatch(action);
 };

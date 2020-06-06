@@ -1,19 +1,15 @@
-import { dispatch } from 'redux';
-import Faker from 'faker';
+import faker from 'faker';
 
 import { CREA_POLIZZA } from './types';
 
-const faker = Faker();
-
 export default () => {
   /* ALTRE OPERAZIONI: CHIAMATE ASYNC, CALCOLI */
-  const action = {
+  return {
     type: CREA_POLIZZA,
     payload: {
-      nome: faker.name(),
-      ammontareVersato: faker.price(),
-      _id: faker.uuid(),
+      nome: faker.name.findName(),
+      ammontareVersato: faker.commerce.price(),
+      _id: faker.random.uuid(),
     },
   };
-  dispatch(action);
 };
